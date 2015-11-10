@@ -89,6 +89,8 @@ class RequestValidator
 
             if ($validator instanceof Validator && $validator->validate($request)) {
                 $passed = true;
+            } elseif ($validator instanceof Validator) {
+                return false;
             }
         }
 
